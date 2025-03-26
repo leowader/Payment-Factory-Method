@@ -1,18 +1,17 @@
 package com.factory.payment.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
-public class CreditCard extends PaymentEntity implements Payment{
-
-    public CreditCard(double finalAmount ,double commissionRate, int post) {
-        super(finalAmount,commissionRate,post);
-    }
+@NoArgsConstructor
+@AllArgsConstructor
+public class CreditCard extends PaymentEntity implements Payment {
 
     @Override
-    public Double processPayment() {
+    public Double processPayment(String paymentType, PaymentEntity payment) {
+        System.out.println("PROCESANDO PAGO CON TARJETA DE CREDITO");
         return 0.0;
     }
 }
