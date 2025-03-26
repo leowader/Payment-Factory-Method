@@ -4,7 +4,5 @@ import lombok.Getter;
 import lombok.Setter;
 
 public interface Payment {
-
-    double finalAmount=0.0;
-    Double processPayment();
+    Double processPayment(String paymentType,PaymentEntity payment);
 }
