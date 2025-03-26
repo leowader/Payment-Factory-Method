@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PaymentEntity {
-    double finalAmount;
+    double amount;
     double commissionRate;
     int post;
 }
