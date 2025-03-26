@@ -8,8 +8,6 @@ import lombok.Setter;
 public class CreditCard extends PaymentEntity implements Payment{
 
     public CreditCard(double finalAmount ,double commissionRate, int post) {
-
-
         super(finalAmount,commissionRate,post);
     }
 
