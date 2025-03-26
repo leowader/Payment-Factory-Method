@@ -10,7 +10,7 @@ public class DebitCart extends PaymentEntity implements Payment {
     }
 
     @Override
-    public Double processPayment(PaymentEntity payment) {
+    public Double processPaymentCalculate(double amount) {
         System.out.println("PROCESANDO PAGO CON TARJETA DEBITO");
         return 0.0;
     }

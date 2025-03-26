@@ -13,8 +13,8 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/{paymentType}")
-    public ResponseEntity<?> processPayment(@PathVariable String paymentType, @RequestBody PaymentEntity payment) {
-        return ResponseEntity.ok(paymentService.processPayment(paymentType, payment));
+    public ResponseEntity<?> processPayment(@PathVariable String paymentType, @RequestBody double amount) {
+        return ResponseEntity.ok(paymentService.processPayment(paymentType, amount));
     }
 
 }
