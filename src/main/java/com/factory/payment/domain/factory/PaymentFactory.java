@@ -5,8 +5,7 @@ import com.factory.payment.domain.Payment;
 public abstract class PaymentFactory {
 
     public Payment getPayment() {
-        Payment payment = createPayment();
-        return payment;
+        return createPayment();
     }
     public abstract  Payment createPayment();
 
