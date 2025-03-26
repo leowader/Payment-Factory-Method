@@ -7,6 +7,7 @@ import com.factory.payment.domain.factory.CreditCardFactory;
 import com.factory.payment.domain.factory.DebitCardFactory;
 import com.factory.payment.domain.factory.PaymentFactory;
 import com.factory.payment.domain.factory.PaypalFactory;
+import com.factory.payment.dtos.PaymentResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,12 @@ public class PaymentService {
     @Autowired
     private ConfigFactoryPayment configFactoryPayment;
 
-    public double processPayment(String paymentType, double amount) {
+    public Payment processPayment(String paymentType, double amount) {
         PaymentFactory pay= configFactoryPayment.configurationFactory(paymentType);
         Payment pago = pay.getPayment();
-        return pago.processPaymentCalculate(amount);
+        pago.processPaymentCalculate(amount);
+
+
+        return pago;
     }
 }
