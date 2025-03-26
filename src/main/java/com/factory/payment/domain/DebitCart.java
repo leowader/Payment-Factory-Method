@@ -8,8 +8,10 @@ import lombok.NoArgsConstructor;
 public class DebitCart extends PaymentEntity implements Payment{
 
     @Override
-    public Double processPayment(String paymentType, PaymentEntity payment) {
+    public Double processPayment(PaymentEntity payment) {
         System.out.println("PROCESANDO PAGO CON TARJETA DEBITO");
         return 0.0;
     }
+
+
 }

@@ -10,8 +10,9 @@ import lombok.Setter;
 public class CreditCard extends PaymentEntity implements Payment {
 
     @Override
-    public Double processPayment(String paymentType, PaymentEntity payment) {
+    public Double processPayment(PaymentEntity payment) {
         System.out.println("PROCESANDO PAGO CON TARJETA DE CREDITO");
         return 0.0;
     }
+
 }
