@@ -3,9 +3,11 @@ package com.factory.payment.domain;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
-public class DebitCart extends PaymentEntity implements Payment{
+public class DebitCart extends PaymentEntity implements Payment {
+    public DebitCart() {
+        this.setCommissionRate(0.03);
+        this.setPost(10);
+    }
 
     @Override
     public Double processPayment(PaymentEntity payment) {
