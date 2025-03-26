@@ -5,14 +5,15 @@ import lombok.NoArgsConstructor;
 
 public class DebitCart extends PaymentEntity implements Payment {
     public DebitCart() {
-        this.setCommissionRate(0.03);
-        this.setPost(10);
+        this.setCommissionRate(0.01);
+        this.setPost(5);
     }
 
     @Override
-    public Double processPaymentCalculate(double amount) {
+    public Double processPaymentCalculate(Double amount) {
         System.out.println("PROCESANDO PAGO CON TARJETA DEBITO");
-        return 0.0;
+        double finalAmount = amount + (amount * this.getCommissionRate());
+        return finalAmount > 500 ? finalAmount + this.getPost() : finalAmount;
     }
 
 

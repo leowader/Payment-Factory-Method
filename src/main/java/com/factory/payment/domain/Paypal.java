@@ -8,9 +8,10 @@ public class Paypal extends PaymentEntity implements Payment {
     }
 
     @Override
-    public Double processPaymentCalculate(double amount) {
+    public Double processPaymentCalculate(Double amount) {
         System.out.println("PROCESANDO PAGO CON PAYPAL");
-        return 0.0;
+        double finalAmount = amount + (amount * this.getCommissionRate());
+        return finalAmount > 750 ? finalAmount + this.getPost() : finalAmount;
     }
 
 }
