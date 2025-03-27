@@ -8,9 +8,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaymentEntity {
-    double amount;
-    double commissionRate;
-    int post;
+    public double amount;
+    public double commissionRate;
+    public int post;
 
     public int getPost() {
         return post;

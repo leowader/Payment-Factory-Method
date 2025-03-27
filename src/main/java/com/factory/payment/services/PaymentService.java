@@ -19,9 +19,15 @@ public class PaymentService {
     @Autowired
     private ConfigFactoryPayment configFactoryPayment;
 
-    public double processPayment(String paymentType, double amount) {
+    public PaymentEntity processPayment(String paymentType, double amount) {
         PaymentFactory pay= configFactoryPayment.configurationFactory(paymentType);
         Payment pago = pay.getPayment();
-        return pago.processPaymentCalculate(amount);
+        double finalPago= pago.processPaymentCalculate(amount);
+        return new PaymentEntity(
+                finalPago,
+                ((PaymentEntity) pago).getCommissionRate(),
+                ((PaymentEntity) pago).getPost()
+        );
+
     }
 }

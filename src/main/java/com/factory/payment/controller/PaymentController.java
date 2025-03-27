@@ -2,6 +2,7 @@ package com.factory.payment.controller;
 
 import com.factory.payment.domain.PaymentEntity;
 import com.factory.payment.dtos.DtoPayment;
+import com.factory.payment.dtos.DtoPaymentResponse;
 import com.factory.payment.services.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,19 @@ public class PaymentController {
 
     @PostMapping("/{paymentType}")
     public ResponseEntity<?> processPayment(@PathVariable String paymentType, @RequestBody DtoPayment dtoPayment) {
-        return ResponseEntity.ok(paymentService.processPayment(paymentType, dtoPayment.getAmount()));
-    }
+        PaymentEntity paymentEntity = paymentService.processPayment(paymentType, dtoPayment.getAmount());
 
+        DtoPaymentResponse response = new DtoPaymentResponse(
+                "SUCCESS",
+                "Payment processed successfully",
+                paymentType,
+                dtoPayment.getAmount(),
+                paymentEntity.getAmount(),
+                paymentEntity.getPost(),
+                paymentEntity.getCommissionRate()
+        );
+
+        return ResponseEntity.ok(response);
+    }
 }
+
