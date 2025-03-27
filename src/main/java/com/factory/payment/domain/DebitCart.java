@@ -11,7 +11,6 @@ public class DebitCart extends PaymentEntity implements Payment {
 
     @Override
     public Double processPaymentCalculate(Double amount) {
-        System.out.println("PROCESANDO PAGO CON TARJETA DEBITO");
         double finalAmount = amount + (amount * this.getCommissionRate());
         return finalAmount > 500 ? finalAmount + this.getPost() : finalAmount;
     }

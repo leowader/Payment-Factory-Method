@@ -12,7 +12,6 @@ public class CreditCard extends PaymentEntity implements Payment {
     }
     @Override
     public Double processPaymentCalculate(Double amount) {
-        System.out.println("PROCESANDO PAGO CON TARJETA DE CREDITO");
         double finalAmount = amount + (amount * this.getCommissionRate());
         double finalPago = finalAmount > 1000 ? finalAmount + this.getPost() : finalAmount;
         this.setAmount(finalPago);

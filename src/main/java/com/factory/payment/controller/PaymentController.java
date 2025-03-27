@@ -18,6 +18,7 @@ public class PaymentController {
     public ResponseEntity<?> processPayment(@PathVariable String paymentType, @RequestBody DtoPayment dtoPayment) {
         PaymentEntity paymentEntity = paymentService.processPayment(paymentType, dtoPayment.getAmount());
 
+
         DtoPaymentResponse response = new DtoPaymentResponse(
                 "SUCCESS",
                 "Payment processed successfully",
@@ -31,4 +32,5 @@ public class PaymentController {
         return ResponseEntity.ok(response);
     }
 }
+
 
