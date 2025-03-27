@@ -23,7 +23,6 @@ public class PaymentController {
                 "SUCCESS",
                 "Payment processed successfully",
                 paymentType,
-                dtoPayment.getAmount(),
                 paymentEntity.getAmount(),
                 paymentEntity.getPost(),
                 paymentEntity.getCommissionRate()
