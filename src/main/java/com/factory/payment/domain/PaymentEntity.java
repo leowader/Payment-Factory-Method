@@ -11,13 +11,14 @@ public class PaymentEntity {
     double amount;
     double commissionRate;
     int post;
+    double finalAmount;
 
-    public int getPost() {
-        return post;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setPost(int post) {
-        this.post = post;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     public double getCommissionRate() {
@@ -28,11 +29,19 @@ public class PaymentEntity {
         this.commissionRate = commissionRate;
     }
 
-    public double getAmount() {
-        return amount;
+    public int getPost() {
+        return post;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setPost(int post) {
+        this.post = post;
+    }
+
+    public double getFinalAmount() {
+        return finalAmount;
+    }
+
+    public void setFinalAmount(double finalAmount) {
+        this.finalAmount = finalAmount;
     }
 }

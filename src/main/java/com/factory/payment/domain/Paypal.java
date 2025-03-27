@@ -14,4 +14,6 @@ public class Paypal extends PaymentEntity implements Payment {
         return finalAmount > 750 ? finalAmount + this.getPost() : finalAmount;
     }
 
+
+
 }

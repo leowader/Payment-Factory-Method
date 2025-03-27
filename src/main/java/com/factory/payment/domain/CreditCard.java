@@ -17,4 +17,6 @@ public class CreditCard extends PaymentEntity implements Payment {
         return finalAmount > 1000 ? finalAmount + this.getPost() : finalAmount;
     }
 
+
+
 }
