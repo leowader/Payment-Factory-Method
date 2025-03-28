@@ -1,12 +1,8 @@
 package com.factory.payment.services;
 
 import com.factory.payment.config.ConfigFactoryPayment;
-import com.factory.payment.domain.Payment;
 import com.factory.payment.domain.PaymentEntity;
-import com.factory.payment.domain.factory.CreditCardFactory;
-import com.factory.payment.domain.factory.DebitCardFactory;
 import com.factory.payment.domain.factory.PaymentFactory;
-import com.factory.payment.domain.factory.PaypalFactory;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +15,9 @@ public class PaymentService {
     @Autowired
     private ConfigFactoryPayment configFactoryPayment;
 
-    public PaymentEntity processPayment(String paymentType, double amount) {
-        PaymentFactory pay= configFactoryPayment.configurationFactory(paymentType);
-        Payment pago = pay.getPayment();
-        double finalPago= pago.processPaymentCalculate(amount);
-        return new PaymentEntity(
-                finalPago,
-                ((PaymentEntity) pago).getCommissionRate(),
-                ((PaymentEntity) pago).getPost()
-        );
-
+    public double processPayment(String paymentType, double amount) {
+        PaymentFactory pay = configFactoryPayment.configurationFactory(paymentType);
+        PaymentEntity pago = pay.getPayment();
+        return pago.calculateAmount(amount, pago.getCommissionRate(), pago.getPost(), pago.getAmountCondition());
     }
 }

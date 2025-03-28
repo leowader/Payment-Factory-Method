@@ -16,19 +16,14 @@ public class PaymentController {
 
     @PostMapping("/{paymentType}")
     public ResponseEntity<?> processPayment(@PathVariable String paymentType, @RequestBody DtoPayment dtoPayment) {
-        PaymentEntity paymentEntity = paymentService.processPayment(paymentType, dtoPayment.getAmount());
-
-
+        double finalAmount = paymentService.processPayment(paymentType, dtoPayment.getAmount());
         DtoPaymentResponse response = new DtoPaymentResponse(
                 "SUCCESS",
                 "Payment processed successfully",
                 paymentType,
                 dtoPayment.getAmount(),
-                paymentEntity.getAmount(),
-                paymentEntity.getPost(),
-                paymentEntity.getCommissionRate()
+                finalAmount
         );
-
         return ResponseEntity.ok(response);
     }
 }

@@ -1,12 +1,12 @@
 package com.factory.payment.domain.factory;
 
-import com.factory.payment.domain.Payment;
+import com.factory.payment.domain.PaymentEntity;
 
 public abstract class PaymentFactory {
 
-    public Payment getPayment() {
+    public PaymentEntity getPayment() {
         return createPayment();
     }
-    public abstract  Payment createPayment();
+    public abstract PaymentEntity createPayment();
 
 }

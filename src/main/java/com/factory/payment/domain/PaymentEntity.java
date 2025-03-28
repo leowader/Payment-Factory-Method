@@ -5,34 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
-public class PaymentEntity {
+@Getter
+@Setter
+public abstract class PaymentEntity  {
     public double amount;
     public double commissionRate;
     public int post;
+    public  int amountCondition;
 
-    public int getPost() {
-        return post;
-    }
-
-    public void setPost(int post) {
-        this.post = post;
-    }
-
-    public double getCommissionRate() {
-        return commissionRate;
-    }
-
-    public void setCommissionRate(double commissionRate) {
-        this.commissionRate = commissionRate;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public double calculateAmount(double amount, double commissionRate, int post, int amountCondition) {
+        double finalAmount = amount + (amount * commissionRate);
+        return finalAmount > amountCondition ? finalAmount + post : finalAmount;
     }
 }

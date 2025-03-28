@@ -1,13 +1,13 @@
 package com.factory.payment.domain.factory;
 
 import com.factory.payment.domain.CreditCard;
-import com.factory.payment.domain.Payment;
+import com.factory.payment.domain.PaymentEntity;
 
 
 public class CreditCardFactory extends PaymentFactory {
 
     @Override
-    public Payment createPayment() {
+    public PaymentEntity createPayment() {
         return new CreditCard();
     }
 }
