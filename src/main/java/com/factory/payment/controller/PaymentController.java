@@ -1,5 +1,6 @@
 package com.factory.payment.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.factory.payment.domain.PaymentEntity;
 import com.factory.payment.dtos.DtoPayment;
 import com.factory.payment.dtos.DtoPaymentResponse;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins =  "http://localhost:3000", allowCredentials = "true")
 @RestController
 @RequestMapping("/payment")
 public class PaymentController {
