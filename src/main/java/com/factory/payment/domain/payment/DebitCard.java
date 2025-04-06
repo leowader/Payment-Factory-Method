@@ -1,4 +1,4 @@
-package com.factory.payment.domain;
+package com.factory.payment.domain.payment;
 
 public class DebitCard extends PaymentEntity {
     public DebitCard() {

@@ -1,9 +1,9 @@
-package com.factory.payment.config;
+package com.factory.payment.config.payment;
 
-import com.factory.payment.domain.factory.CreditCardFactory;
-import com.factory.payment.domain.factory.DebitCardFactory;
-import com.factory.payment.domain.factory.PaymentFactory;
-import com.factory.payment.domain.factory.PaypalFactory;
+import com.factory.payment.domain.payment.factory.CreditCardFactory;
+import com.factory.payment.domain.payment.factory.DebitCardFactory;
+import com.factory.payment.domain.payment.factory.PaymentFactory;
+import com.factory.payment.domain.payment.factory.PaypalFactory;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;

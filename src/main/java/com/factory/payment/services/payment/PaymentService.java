@@ -1,8 +1,8 @@
-package com.factory.payment.services;
+package com.factory.payment.services.payment;
 
-import com.factory.payment.config.ConfigFactoryPayment;
-import com.factory.payment.domain.PaymentEntity;
-import com.factory.payment.domain.factory.PaymentFactory;
+import com.factory.payment.config.payment.ConfigFactoryPayment;
+import com.factory.payment.domain.payment.PaymentEntity;
+import com.factory.payment.domain.payment.factory.PaymentFactory;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

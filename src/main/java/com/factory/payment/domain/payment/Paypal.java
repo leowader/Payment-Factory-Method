@@ -1,6 +1,6 @@
-package com.factory.payment.domain;
+package com.factory.payment.domain.payment;
 
-public class Paypal extends PaymentEntity  {
+public class Paypal extends PaymentEntity {
 
     public Paypal() {
         this.setCommissionRate(0.02);

@@ -1,8 +1,6 @@
-package com.factory.payment.domain;
+package com.factory.payment.domain.payment;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter

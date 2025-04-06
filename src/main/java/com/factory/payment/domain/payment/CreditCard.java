@@ -1,5 +1,4 @@
-package com.factory.payment.domain;
-
+package com.factory.payment.domain.payment;
 
 
 public class CreditCard extends PaymentEntity {
