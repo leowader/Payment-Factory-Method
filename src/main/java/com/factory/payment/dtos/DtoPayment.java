@@ -1,4 +1,4 @@
-package com.factory.payment.dtos.payment;
+package com.factory.payment.dtos;
 //WILCAR
 
 import lombok.Getter;

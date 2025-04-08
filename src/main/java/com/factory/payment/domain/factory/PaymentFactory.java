@@ -1,6 +1,6 @@
-package com.factory.payment.domain.payment.factory;
+package com.factory.payment.domain.factory;
 
-import com.factory.payment.domain.payment.PaymentEntity;
+import com.factory.payment.domain.PaymentEntity;
 
 public abstract class PaymentFactory {
 

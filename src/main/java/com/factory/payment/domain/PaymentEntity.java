@@ -1,4 +1,4 @@
-package com.factory.payment.domain.payment;
+package com.factory.payment.domain;
 
 import lombok.Getter;
 import lombok.Setter;
